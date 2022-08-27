@@ -55,7 +55,7 @@ span {
   height: 100%;
 }
 .header {
-  font-size: 44px;
+  font-size: 30px;
 }
 .row {
   display: flex;
@@ -65,10 +65,10 @@ span {
   height: 100%;
 }
 .row-header {
-  min-width: max-content;
+  max-width: 200px;
   text-align: center;
   color: var(--color-font-main);
-  font-size: 44px;
+  font-size: 40px;
 }
 
 .column {
@@ -85,5 +85,13 @@ span {
 
 .column:hover {
   background-color: rgba(0, 0, 0, 0.404);
+}
+@media (max-width: 1200px) {
+  .column {
+    font-size: 30px;
+  }
+  .row-header{
+    font-size: 25px;
+  }
 }
 </style>

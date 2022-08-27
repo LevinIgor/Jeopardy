@@ -222,7 +222,7 @@ input[type="file"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: scroll;
   border-radius: 10px;
 }
 .popup {

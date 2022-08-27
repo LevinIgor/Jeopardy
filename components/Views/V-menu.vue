@@ -1,8 +1,12 @@
 <template>
   <div class="V-menu">
     <div class="commands">
-      <V-command v-for="command in commands" :key="command.id" :command="command" @setRandomName="$emit('setRandomName', $event)" />
-      </div>
+      <V-command
+        v-for="command in commands"
+        :key="command.id"
+        :command="command"
+        @setRandomName="$emit('setRandomName', $event)"
+      />
     </div>
   </div>
 </template>
@@ -10,7 +14,7 @@
 <script>
 export default {
   name: "V-menu",
-  props:['commands'],
+  props: ["commands"],
   data() {
     return {
       select: "",

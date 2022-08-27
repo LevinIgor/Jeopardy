@@ -19,7 +19,12 @@
         placeholder="Введите имя"
         class="name-input"
       />
-      <img src="../static/icons/random.png" @click="$emit('setRandomName',command.id)" alt="" v-if="!disabled">
+      <img
+        src="../static/icons/random.png"
+        @click="$emit('setRandomName', command.id)"
+        alt=""
+        v-if="!disabled"
+      />
     </div>
     <slot></slot>
   </div>
@@ -54,7 +59,7 @@ button {
   outline: none;
 }
 span {
-  font-size: 44px;
+  font-size: 20px;
 }
 input {
   text-align: center;
@@ -71,8 +76,6 @@ input {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
-  min-height: 200px;
   padding: 20px 0;
   border-radius: 10px;
   box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
@@ -80,22 +83,26 @@ input {
   background-color: rgba(207, 241, 250, 0.477);
 }
 .score {
-  font-size: 90px;
-  width: 300px;
+  font-size: 50px;
+  width: 200px;
 }
-.name{
+.name {
   display: flex;
   align-items: center;
 }
-.name img{
+.name img {
   box-sizing: content-box;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
-  padding:20px;
+  width: 20px;
+  height: 20px;
+  padding: 20px;
 }
-.name-input{
-  font-size: 40px;
-  width: 350px;
+.name-input {
+  font-size: 20px;
+  width: 300px;
+}
+
+@media (max-width: 1200px) {
+ 
 }
 </style>

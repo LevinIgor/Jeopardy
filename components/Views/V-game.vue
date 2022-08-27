@@ -182,7 +182,7 @@ export default {
   border-radius: 10px;
 }
 .game-text {
-  font-size: 90px;
+  font-size: 50px;
   padding: 200px 300px;
   background-color: rgba(240, 248, 255, 0.049);
   cursor: pointer;
@@ -201,7 +201,7 @@ export default {
   z-index: 1;
 }
 .popup-title {
-  font-size: 30px;
+  font-size: 25px;
   color: white;
 }
 .popup-btns {
@@ -232,5 +232,11 @@ export default {
 }
 .component-fade-leave-to {
   opacity: 0;
+}
+
+@media (max-width: 1200px) {
+  .popup-title{
+    font-size: 15px;
+  }
 }
 </style>

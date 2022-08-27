@@ -1,8 +1,9 @@
 <template>
   <div class="geopardy">
-    <div class="header" :class="{hide:mode=='game'}">
+    <div class="header" :class="{ hide: mode == 'game' }">
       <div class="select-scenario block">
-        <select name="" id="" v-model="select">
+        <select v-model="select">
+          <option value="" disabled>Выберите сценарий</option>
           <option
             :value="scenario.id"
             v-for="scenario in scenarios"
@@ -27,7 +28,7 @@
         <div class="btn" @click="createScenario">Создать</div>
       </div>
       <div class="commands" v-if="mode == 'menu'">
-        <span>Количество команд: </span>
+        <span>Кол-во комманд: </span>
         <input type="range" @input="addCommands($event)" min="2" max="5" />
       </div>
       <div class="control block" v-if="mode == 'menu'">
@@ -47,8 +48,16 @@
       </div>
     </div>
     <div class="content">
-      <ViewsV-menu v-if="mode == 'menu'" :commands="commands" @setRandomName="setRandomName($event)" />
-      <ViewsV-game v-if="mode == 'game'" :commands = "commands" :select="select" />
+      <ViewsV-menu
+        v-if="mode == 'menu'"
+        :commands="commands"
+        @setRandomName="setRandomName($event)"
+      />
+      <ViewsV-game
+        v-if="mode == 'game'"
+        :commands="commands"
+        :select="select"
+      />
       <ViewsV-editor v-if="mode == 'edit'" :selectId="select" ref="editor" />
     </div>
   </div>
@@ -95,13 +104,13 @@ export default {
         rows: this.rows,
         cols: this.cols,
       });
-      this.select = this.$store.state.scenarios[
-        this.$store.state.scenarios.length - 1
-      ].id;
+      this.select =
+        this.$store.state.scenarios[this.$store.state.scenarios.length - 1].id;
     },
-    deleteScenario(){
-      this.$store.commit("DELETE_SCENARIO", this.select);
-      this.$refs.editor.deleteScenario()
+    deleteScenario() {
+      alert('Нет прав на удаление сценария');
+      // this.$store.commit("DELETE_SCENARIO", this.select);
+      // this.$refs.editor.deleteScenario();
     },
     setRandomName(event) {
       this.commands[event].name = randomName();
@@ -136,12 +145,12 @@ input {
   align-items: center;
   justify-content: space-between;
 }
-.hide{
+.hide {
   opacity: 0;
   transition: opacity 0.3s ease-in;
   position: fixed;
 }
-.hide:hover{
+.hide:hover {
   opacity: 1;
 }
 .icon {
